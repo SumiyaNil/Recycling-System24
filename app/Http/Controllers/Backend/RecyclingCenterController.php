@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class RecyclingCenterController extends Controller
 {
-    //
+    public function recyclingCenter()
+    {
+        return view('backend.recyclingCenter');
+    }
 }

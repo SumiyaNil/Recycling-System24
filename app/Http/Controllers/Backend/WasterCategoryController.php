@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class WasterCategoryController extends Controller
 {
-    //
+    public function wasteCategory()
+    {
+        return view('backend.wasteCategory');
+    }
 }
