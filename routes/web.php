@@ -12,7 +12,7 @@ use App\Http\Controllers\Backend\RewardsPointController;
 use App\Http\Controllers\Backend\WasterCategoryController;
 use Illuminate\Support\Facades\Route;
 
-//backend
+//Backend Routes Start here
 
 Route::get('/',[HomeController::class,'home'])->name('dashboard.home');
 
