@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
    public function admin()
    {
-      return view('backend.admin');
+      return view('backend.home');
    }
 
 }

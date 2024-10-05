@@ -44,6 +44,7 @@ Route::get('/business-settings',[BusinessController::class,'business'])->name('b
 
 //Backend Locations
 Route::get('/location',[LocationController::class,'location'])->name('location.list');
+Route::get('/location-form',[LocationController::class,'locationForm'])->name('location.form');
 
 
 //Backend Recycling Centers
