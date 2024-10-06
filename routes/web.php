@@ -10,8 +10,9 @@ use App\Http\Controllers\Backend\RecyclingCenterController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\RewardsPointController;
 use App\Http\Controllers\Backend\RoleController;
+use App\Http\Controllers\Backend\UserAuthenticationController as BackendUserAuthenticationController;
 use App\Http\Controllers\Backend\WasterCategoryController;
-use App\Http\Controllers\UserAuthenticationController;
+
 use Illuminate\Support\Facades\Route;
 
 //Backend Routes Start here
@@ -25,7 +26,13 @@ Route::get('/admin-form',[AdminController::class,'adminForm'])->name('admin.form
 Route::post('/admin-store',[AdminController::class,'adminStore'])->name('admin.store');
 
 
-Route::get('/do-login',[UserAuthenticationController::class,'login'])->name('logIn');
+Route::get('/do-login',[BackendUserAuthenticationController::class,'login'])->name('logIn');
+
+
+
+
+//Route::get('/sign-Up',[UserAuthenticationController::class,'signup'])->name('signUp');
+//Route::get('/do-login',[UserAuthenticationController::class,'login'])->name('logIn');
 
 
 

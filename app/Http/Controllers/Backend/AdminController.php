@@ -24,7 +24,7 @@ class AdminController extends Controller
          'name'=>$request->name,
          'email'=>$request->email,
          'password'=>$request->password,
-         'role_id'=>$request->role,
+         'role_id'=>$request->role
          
       ]);
       return redirect()->back();
