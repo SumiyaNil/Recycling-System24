@@ -28,6 +28,8 @@ Route::get('/customers',[CustomerController::class,'customer'])->name('customer.
 
 //Backend Waste Category
 Route::get('/waste-category',[WasterCategoryController::class,'wasteCategory'])->name('waste.category');
+Route::get('/waste-category-form',[WasterCategoryController::class,'wasteCategoryForm'])->name('waste.category.form');
+Route::post('/waste-category-store',[WasterCategoryController::class,'wasteCategoryStore'])->name('waste.category.store');
 
 
 //Backend Reports
@@ -53,3 +55,5 @@ Route::get('/recycling',[RecyclingCenterController::class,'recyclingCenter'])->n
 
 //Backend Reward Points
 Route::get('/rewards',[RewardsPointController::class,'rewardPoint'])->name('rewardPoint.list');
+
+
