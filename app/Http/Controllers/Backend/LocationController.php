@@ -11,4 +11,11 @@ class LocationController extends Controller
     {
         return view('backend.location');
     }
+
+    public function locationForm()
+    {
+        return view('backend.location-form');
+    }
+  
+
 }

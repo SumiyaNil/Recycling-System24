@@ -9,16 +9,24 @@ use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\RecyclingCenterController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\RewardsPointController;
+use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\WasterCategoryController;
+use App\Http\Controllers\UserAuthenticationController;
 use Illuminate\Support\Facades\Route;
 
-//backend
+//Backend Routes Start here
 
 Route::get('/',[HomeController::class,'home'])->name('dashboard.home');
 
 
 //Admin
 Route::get('/admin',[AdminController::class,'admin'])->name('admin.list');
+
+
+Route::get('/do-login',[UserAuthenticationController::class,'login'])->name('logIn');
+
+
+
 
 
 
@@ -46,6 +54,7 @@ Route::get('/business-settings',[BusinessController::class,'business'])->name('b
 
 //Backend Locations
 Route::get('/location',[LocationController::class,'location'])->name('location.list');
+Route::get('/location-form',[LocationController::class,'locationForm'])->name('location.form');
 
 
 //Backend Recycling Centers
@@ -55,5 +64,11 @@ Route::get('/recycling',[RecyclingCenterController::class,'recyclingCenter'])->n
 
 //Backend Reward Points
 Route::get('/rewards',[RewardsPointController::class,'rewardPoint'])->name('rewardPoint.list');
+
+
+//Backend Role
+Route::get('/role-list',[RoleController::class,'roleList'])->name('role.list');
+Route::get('/role-form',[RoleController::class,'roleForm'])->name('role.form');
+Route::post('/role-store',[RoleController::class,'roleStore'])->name('role.store');
 
 
