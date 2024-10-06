@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\RecyclingCenterController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\RewardsPointController;
 use App\Http\Controllers\Backend\WasterCategoryController;
+use App\Http\Controllers\UserAuthenticationController;
 use Illuminate\Support\Facades\Route;
 
 //Backend Routes Start here
@@ -19,6 +20,12 @@ Route::get('/',[HomeController::class,'home'])->name('dashboard.home');
 
 //Admin
 Route::get('/admin',[AdminController::class,'admin'])->name('admin.list');
+
+Route::get('/sign-Up',[UserAuthenticationController::class,'signup'])->name('signUp');
+Route::get('/do-login',[UserAuthenticationController::class,'login'])->name('logIn');
+
+
+
 
 
 
