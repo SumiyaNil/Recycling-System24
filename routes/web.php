@@ -21,6 +21,8 @@ Route::get('/',[HomeController::class,'home'])->name('dashboard.home');
 
 //Admin
 Route::get('/admin',[AdminController::class,'admin'])->name('admin.list');
+Route::get('/admin-form',[AdminController::class,'adminForm'])->name('admin.form');
+Route::post('/admin-store',[AdminController::class,'adminStore'])->name('admin.store');
 
 
 Route::get('/do-login',[UserAuthenticationController::class,'login'])->name('logIn');
