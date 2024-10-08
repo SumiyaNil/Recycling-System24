@@ -29,5 +29,17 @@ class RoleController extends Controller
         return redirect()->back();
         
     }
+    public function assignPermission($id)
+    {
+        $role = Role::find($id);
+        
+        return view('backend.assignRole',compact('role'));
+    }
+    public function roleDelete($id)
+    {
+      $role = Role::find($id)->delete();
+      notify()->success("role deleted successfully");
+      return redirect()->back();
+    }
     
 }

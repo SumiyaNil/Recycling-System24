@@ -27,12 +27,7 @@
 
 
 <!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="" data-target="#collapsePages"
-        aria-expanded="" aria-controls="">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Admin</span>
-    </a>
+
     <!-- <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Login Screens:</h6>
@@ -45,7 +40,7 @@
             <a class="collapse-item" href="blank.html">Blank Page</a>
         </div>
     </div> -->
-</li>
+
 
 <!-- Nav Item - Charts -->
 <li class="nav-item">
@@ -61,7 +56,17 @@
         <span>Waste Category</span></a>
 </li>
 
+<li class="nav-item">
+    <a class="nav-link" href="{{route('role.list')}}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Role</span></a>
+</li>
 
+<li class="nav-item">
+    <a class="nav-link" href="{{route('user.list')}}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>User</span></a>
+</li>
 <li class="nav-item">
     <a class="nav-link" href="tables.html">
         <i class="fas fa-fw fa-table"></i>

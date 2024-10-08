@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\RewardsPointController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserAuthenticationController as BackendUserAuthenticationController;
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\WasterCategoryController;
 
 use Illuminate\Support\Facades\Route;
@@ -20,10 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'home'])->name('dashboard.home');
 
 
-//Admin
-Route::get('/admin',[AdminController::class,'admin'])->name('admin.list');
-Route::get('/admin-form',[AdminController::class,'adminForm'])->name('admin.form');
-Route::post('/admin-store',[AdminController::class,'adminStore'])->name('admin.store');
+
 
 
 Route::get('/do-login',[BackendUserAuthenticationController::class,'login'])->name('logIn');
@@ -79,5 +77,12 @@ Route::get('/rewards',[RewardsPointController::class,'rewardPoint'])->name('rewa
 Route::get('/role-list',[RoleController::class,'roleList'])->name('role.list');
 Route::get('/role-form',[RoleController::class,'roleForm'])->name('role.form');
 Route::post('/role-store',[RoleController::class,'roleStore'])->name('role.store');
+Route::get('/role-assign-permission/{role_id}',[RoleController::class,'assignPermission'])->name('role.assign.permission');
+Route::get('/role-delete/{role_id}',[RoleController::class,'roleDelete'])->name('role.delete');
+//Backend Role
+Route::get('/user-list',[UserController::class,'userList'])->name('user.list');
+Route::get('/user-form',[UserController::class,'userForm'])->name('user.form');
+Route::post('/user-store',[UserController::class,'userStore'])->name('user.store');
+
 
 
