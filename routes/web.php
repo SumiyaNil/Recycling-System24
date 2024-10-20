@@ -16,7 +16,31 @@ use App\Http\Controllers\Backend\WasterCategoryController;
 
 use Illuminate\Support\Facades\Route;
 
+
+
+
+
 //Backend Routes Start here
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/do-login',[BackendUserAuthenticationController::class,'login'])->name('login');
+Route::post('/do-login-form',[BackendUserAuthenticationController::class,'form'])->name('login.form');
+
+
+
+Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware'=>'check_permission'],function(){
+Route::get('/logout',[BackendUserAuthenticationController::class,'logout'])->name('logout');
 
 Route::get('/',[HomeController::class,'home'])->name('dashboard.home');
 
@@ -24,7 +48,7 @@ Route::get('/',[HomeController::class,'home'])->name('dashboard.home');
 
 
 
-Route::get('/do-login',[BackendUserAuthenticationController::class,'login'])->name('logIn');
+
 
 
 
@@ -78,11 +102,15 @@ Route::get('/role-list',[RoleController::class,'roleList'])->name('role.list');
 Route::get('/role-form',[RoleController::class,'roleForm'])->name('role.form');
 Route::post('/role-store',[RoleController::class,'roleStore'])->name('role.store');
 Route::get('/role-assign-permission/{role_id}',[RoleController::class,'assignPermission'])->name('role.assign.permission');
+Route::post('/role-assign-permission-submit/{role_id}',[RoleController::class,'submitPermission'])->name('role.submit.permission');
 Route::get('/role-delete/{role_id}',[RoleController::class,'roleDelete'])->name('role.delete');
+
+
 //Backend Role
 Route::get('/user-list',[UserController::class,'userList'])->name('user.list');
 Route::get('/user-form',[UserController::class,'userForm'])->name('user.form');
 Route::post('/user-store',[UserController::class,'userStore'])->name('user.store');
 
+});
 
-
+});

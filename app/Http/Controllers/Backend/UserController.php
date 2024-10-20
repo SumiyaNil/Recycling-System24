@@ -16,7 +16,8 @@ class UserController extends Controller
     }
     public function userForm()
     {
-        $role = Role::all();
+        $role = Role::where('role_id','!=','admin')->get();
+    //    $role = Role::all();
         return view('backend.userform',compact('role'));
     }
     public function userStore(Request $request)

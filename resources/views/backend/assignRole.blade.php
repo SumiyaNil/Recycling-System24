@@ -1,31 +1,20 @@
 @extends('backend.master')
 @section('content')
 
-<style>
-.h1{
-    font-size: large;
-    align-content: center;
-}
-</style>
-<h1>This is {{$role->name}} view table </h1>
 
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+
+<form action="{{route('role.submit.permission',$role_id)}}" method="post">
+  @csrf
+@foreach($permission as $permission)
+<div class="form-check  mt-5">
+
+  <input class="form-check-input" @if(in_array($permission->id,$rolePermission)) checked @endif type="checkbox" value="{{$permission->id}}" name="permission[]" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
-    {{$role->id}}
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-  <label class="form-check-label" for="flexCheckChecked">
-    {{$role->name}}
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-  <label class="form-check-label" for="flexCheckChecked">
-    {{$role->status}}
+    {{$permission->name}}
   </label>
 </div>
 
+@endforeach
+<button class="btn btn-primary" type="submit">Submit</button>
+</form>
 @endsection
