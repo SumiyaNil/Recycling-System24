@@ -11,6 +11,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->alias([
+           
+        'check_permission'=> \App\Http\Middleware\AccessMiddleware::class,
+        ]);
+    })
+    ->withMiddleware(function (Middleware $middleware) {
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
