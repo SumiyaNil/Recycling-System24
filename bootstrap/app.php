@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
            
         'check_permission'=> \App\Http\Middleware\AccessMiddleware::class,
+        'customer_auth'=> \App\Http\Middleware\CustomerMiddleware::class,
         ]);
     })
     ->withMiddleware(function (Middleware $middleware) {
