@@ -13,8 +13,26 @@ use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserAuthenticationController as BackendUserAuthenticationController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\WasterCategoryController;
-
+use App\Http\Controllers\Frontend\CustomerController as FrontendCustomerController;
+use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use Illuminate\Support\Facades\Route;
+
+
+
+
+
+
+//fronted routes start here
+Route::get('/home',[FrontendHomeController::class,'home'])->name('frontend.home');
+Route::post('/register',[FrontendCustomerController::class,'register'])->name('frontend.register');
+Route::post('/login',[FrontendCustomerController::class,'login'])->name('frontend.login');
+Route::get('/otp',[FrontendHomeController::class,'otpPage'])->name('otp.page');
+Route::post('/otp-submit',[FrontendHomeController::class,'otpSubmit'])->name('otp.submit');
+
+Route::group(['middleware'=>'customer_auth'],function(){
+    
+});
+
 
 
 

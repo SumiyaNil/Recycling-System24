@@ -40,7 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-       
+        'customerGuard'=>[
+            'driver'=>'session',
+            'provider'=>'customerProvider',
+        ]
     ],
     
 
@@ -66,7 +69,10 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
-         
+         'customerProvider'=>[
+            'driver'=>'eloquent',
+            'model'=>env('AUTH_MODEL',App\Models\Customer::class)
+        ]
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
